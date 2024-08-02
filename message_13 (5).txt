@@ -240,8 +240,8 @@ local window = Create:window()
 local Tab1 = window:CreateTab("Function")
 local Tab2 = window:CreateTab("More")
 local Tab3 = window:CreateTab("Tele")
-local Page1 = Tab1:CreatePage(1,"Main")
-local Page2 = Tab1:CreatePage(2,"SHIT")
+local page1 = Tab1:CreatePage(1,"Main")
+local page2 = Tab1:CreatePage(2,"SHIT")
 
 
     page1:Toggle("Killaura All",false,function(value)
