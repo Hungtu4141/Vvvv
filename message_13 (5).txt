@@ -243,16 +243,16 @@ local Tab3 = window:CreateTab("Tele")
 local Page1 = Tab1:CreatePage(1,"Main")
 local Page2 = Tab1:CreatePage(2,"SHIT")
 
-if game.PlaceId == 10464237910 then 
-    Page1:Toggle("Killaura All",false,function(value)
+
+    page1:Toggle("Killaura All",false,function(value)
         Killaura =  value
     end)
 
-    Page1:Toggle("Auto Farm Raid",Settings.FarmrDUMA,function(value)
+    page1:Toggle("Auto Farm Raid",Settings.FarmrDUMA,function(value)
         Settings.FarmrDUMA = value
     end)
 
-    Page1:Button("Kill Zama [ 50% ]",function()
+    page1:Button("Kill Zama [ 50% ]",function()
         pcall(function()
             for _,v in pairs(game.workspace:GetChildren()) do
                 if v.Name == "FusedZamasu" then
