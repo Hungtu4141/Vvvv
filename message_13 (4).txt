@@ -4,22 +4,21 @@ _G.Logo = 0000
 
 local Evil = loadstring(game:HttpGet("https://raw.githubusercontent.com/x2duck/gui-/main/sillyhubfreegui.lua"))()
 local Win = library:Evil("Crystal "," Hub",_G.Logo )
-local Tab1 = window:CreateTab("Function")
-local Tab2 = window:CreateTab("More")
-local Tab3 = window:CreateTab("Tele")
-local Page1 = Tab1:CreatePage(1,"Main")
-local Page2 = Tab1:CreatePage(2,"SHIT")
+local tab1 = window:CreateTab("Function")
+local tab2 = window:CreateTab("More")
+local tab3 = window:CreateTab("Tele")
+local page1 = tab1:Createpage(1,"Main")
+local page2 = tab1:Createpage(2,"SHIT")
 
-if game.PlaceId == 10464237910 then 
-    Page1:Toggle("Killaura All",false,function(value)
+    page1:Toggle("Killaura All",false,function(value)
         Killaura =  value
     end)
 
-    Page1:Toggle("Auto Farm Raid",Settings.FarmrDUMA,function(value)
+    page1:Toggle("Auto Farm Raid",Settings.FarmrDUMA,function(value)
         Settings.FarmrDUMA = value
     end)
 
-    Page1:Button("Kill Zama [ 50% ]",function()
+    page1:Button("Kill Zama [ 50% ]",function()
         pcall(function()
             for _,v in pairs(game.workspace:GetChildren()) do
                 if v.Name == "FusedZamasu" then
@@ -34,37 +33,37 @@ if game.PlaceId == 10464237910 then
         end)
     end)
 
-    Page1:Toggle("Auto Farm [Beta]",false,function(value)
+    age1:Toggle("Auto Farm [Beta]",false,function(value)
         Farm =  value
     end)
 
-    Page1:Toggle("Fast Attack (50% Safe)",false,function(value)
+    page1:Toggle("Fast Attack (50% Safe)",false,function(value)
         CBLRaid =  value
     end)
 
-    Page2:Label('Config')
+    page2:Label('Config')
 
     Settings.DistanceMob = 9
-    Page1:Slider("Distance Farm",true,0,100,Settings.DistanceMob,function(v)
+    page1:Slider("Distance Farm",true,0,100,Settings.DistanceMob,function(v)
         Settings.DistanceMob = v
     end)
     
-    Page2:Dropdown("Item",Weaponlist,Settings.Weapon,function(v)
+    page2:Dropdown("Item",Weaponlist,Settings.Weapon,function(v)
         Settings.Weapon = v
     end)
 
-    local Page1_2 = Tab2:CreatePage(1,"Player")
+    local page1_2 = Tab2:Createpage(1,"Player")
 
-    Page1_2:Label('Mics')
+    page1_2:Label('Mics')
 
-    Page1_2:Toggle("Auto Esp Fruit",false,function(value)
+    page1_2:Toggle("Auto Esp Fruit",false,function(value)
         DevilFruitESP = value
         while DevilFruitESP do wait()
             UpdateBfEsp() 
         end
     end)
 
-    Page1_2:Button("Grab Fruit",function()
+    page1_2:Button("Grab Fruit",function()
         pcall(function()
             for _,v in pairs(game.workspace:GetChildren()) do
                 if string.find(v.Name,"Fruit") then
@@ -76,37 +75,37 @@ if game.PlaceId == 10464237910 then
         end)
     end)
 
-    Page1_2:Button("FlyGui",function()
+    page1_2:Button("FlyGui",function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Reiji0001/Fly-Gui/main/Fly-Gui_Source"))()
     end)
 
-    Page1_2:Button("Super Low Mode",function()
+    page1_2:Button("Super Low Mode",function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/crystalnerd/ScriptLinhTinh/main/AntiLag"))()
     end)
 
-    local Page2_2 = Tab2:CreatePage(2,"Player")
+    local page2_2 = Tab2:Createpage(2,"Player")
 
-    Page2_2:Label('Stats')
+    page2_2:Label('Stats')
 
-    Page2_2:Toggle("Auto Stat (Hp)",false,function(value)
+    page2_2:Toggle("Auto Stat (Hp)",false,function(value)
         hp = value
     end)
 
-    Page2_2:Toggle("Auto Stat (Melee)",false,function(value)
+    page2_2:Toggle("Auto Stat (Melee)",false,function(value)
         Melee = value
     end)
 
-    Page2_2:Toggle("Auto Stat (Sword)",false,function(value)
+    page2_2:Toggle("Auto Stat (Sword)",false,function(value)
         sw = value
     end)
 
-    Page2_2:Toggle("Auto Stat (DF)",false,function(value)
+    page2_2:Toggle("Auto Stat (DF)",false,function(value)
         df = value
     end)
 
-    local Page1_3 = Tab3:CreatePage(1,"TeleIsland")
+    local page1_3 = Tab3:Createpage(1,"TeleIsland")
 
-    Page1_3:Dropdown("Island",{"Start Island","Sand Island","Roshi Island","Snow Island","Pink Island","NameK Island","IDK Island","DontKnowThisIsland","Sky Island","Magma Island","Sky2 Island","Secret House","KameKameha Island"},nil,function(a)
+    page1_3:Dropdown("Island",{"Start Island","Sand Island","Roshi Island","Snow Island","Pink Island","NameK Island","IDK Island","DontKnowThisIsland","Sky Island","Magma Island","Sky2 Island","Secret House","KameKameha Island"},nil,function(a)
         if a == "Start Island" then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(763.180908, 198.715561, 313.915527, 1, 0, 0, 0, 1, 0, 0, 0, 1)
         elseif a == "Sand Island" then
@@ -136,62 +135,62 @@ if game.PlaceId == 10464237910 then
         end
     end)
 else
-    Page1:Toggle("Killaura All",false,function(value)
+    page1:Toggle("Killaura All",false,function(value)
         Killaura = value
     end)
 
-    Page1:Toggle("Auto Equip Melee",Settings.AutoMelee,function(value)
+    page1:Toggle("Auto Equip Melee",Settings.AutoMelee,function(value)
         Settings.AutoMelee = value
     end)
 
-    Page1:Toggle("Auto Equip Sword",Settings.AutoSword,function(value)
+    page1:Toggle("Auto Equip Sword",Settings.AutoSword,function(value)
         Settings.AutoSword = value
     end)
 
-    Page1:Toggle("Auto Farm Raid",Settings.FarmrDUMA,function(value)
+    page1:Toggle("Auto Farm Raid",Settings.FarmrDUMA,function(value)
         Settings.FarmrDUMA = value
     end)
 
-    Page1:Toggle("Fast Attack (50% Safe)",false,function(value)
+    page1:Toggle("Fast Attack (50% Safe)",false,function(value)
         CBLRaid =  value
     end)
 
-    local Page2 = Tab1:CreatePage(2,"SHIT")
+    local page2 = Tab1:Createpage(2,"SHIT")
 
-    Page2:Label('Config')
+    page2:Label('Config')
 
-    Page2:Dropdown("Wish",{"Random","Beli","Gem","Unlock","Ruby","Dragon Scale"},Settings.Reward,function(a)
+    page2:Dropdown("Wish",{"Random","Beli","Gem","Unlock","Ruby","Dragon Scale"},Settings.Reward,function(a)
         Settings.Reward = a
     end)
 
-    Page2:Dropdown("Method Raid",{"Normal","Fast"},"Fast",function(a)
+    page2:Dropdown("Method Raid",{"Normal","Fast"},"Fast",function(a)
         Method = a
     end)
 
     Settings.SaveAt = 30
-    Page2:Slider("Safe At",true,0,100,Settings.SaveAt,function(v)
+    page2:Slider("Safe At",true,0,100,Settings.SaveAt,function(v)
         Settings.SaveAt = v
     end)
 
     Settings.DistanceMob = 9
-    Page2:Slider("Distance Farm",true,0,100,Settings.DistanceMob,function(v)
+    page2:Slider("Distance Farm",true,0,100,Settings.DistanceMob,function(v)
         Settings.DistanceMob = value
     end)
 
-    Page2:Dropdown("Item",Weaponlist,Settings.Weapon,function(v)
+    page2:Dropdown("Item",Weaponlist,Settings.Weapon,function(v)
         Settings.Weapon = v
     end)
 
 
-    local Page1_2 = Tab2:CreatePage(1,"Player")
+    local page1_2 = Tab2:Createpage(1,"Player")
 
-    Page1_2:Label('Mics')
+    page1_2:Label('Mics')
 
-    Page1_2:Button("FlyGui",function()
+    page1_2:Button("FlyGui",function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Reiji0001/Fly-Gui/main/Fly-Gui_Source"))()
     end)
 
-    Page1_2:Button("Super Low Mode",function()
+    page1_2:Button("Super Low Mode",function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/crystalnerd/ScriptLinhTinh/main/AntiLag"))()
     end)
 
