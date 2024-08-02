@@ -1,0 +1,530 @@
+repeat wait() until game:IsLoaded()
+_G.Color = Color3.fromRGB(66, 245, 135)
+_G.Logo = 0000
+
+local Evil = loadstring(game:HttpGet("https://raw.githubusercontent.com/x2duck/gui-/main/sillyhubfreegui.lua"))()
+local Win = library:Evil("Crystal "," Hub",_G.Logo )
+local Tab1 = window:CreateTab("Function")
+local Tab2 = window:CreateTab("More")
+local Tab3 = window:CreateTab("Tele")
+local Page1 = Tab1:CreatePage(1,"Main")
+local Page2 = Tab1:CreatePage(2,"SHIT")
+
+if game.PlaceId == 10464237910 then 
+    Page1:Toggle("Killaura All",false,function(value)
+        Killaura =  value
+    end)
+
+    Page1:Toggle("Auto Farm Raid",Settings.FarmrDUMA,function(value)
+        Settings.FarmrDUMA = value
+    end)
+
+    Page1:Button("Kill Zama [ 50% ]",function()
+        pcall(function()
+            for _,v in pairs(game.workspace:GetChildren()) do
+                if v.Name == "FusedZamasu" then
+                    if v:FindFirstChild("HumanoidRootPart") then
+                        Teleport(v.HumanoidRootPart.CFrame)
+                    end
+                    sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                    wait(0.1)
+                    v.Humanoid.Health = 0
+                end
+            end
+        end)
+    end)
+
+    Page1:Toggle("Auto Farm [Beta]",false,function(value)
+        Farm =  value
+    end)
+
+    Page1:Toggle("Fast Attack (50% Safe)",false,function(value)
+        CBLRaid =  value
+    end)
+
+    Page2:Label('Config')
+
+    Settings.DistanceMob = 9
+    Page1:Slider("Distance Farm",true,0,100,Settings.DistanceMob,function(v)
+        Settings.DistanceMob = v
+    end)
+    
+    Page2:Dropdown("Item",Weaponlist,Settings.Weapon,function(v)
+        Settings.Weapon = v
+    end)
+
+    local Page1_2 = Tab2:CreatePage(1,"Player")
+
+    Page1_2:Label('Mics')
+
+    Page1_2:Toggle("Auto Esp Fruit",false,function(value)
+        DevilFruitESP = value
+        while DevilFruitESP do wait()
+            UpdateBfEsp() 
+        end
+    end)
+
+    Page1_2:Button("Grab Fruit",function()
+        pcall(function()
+            for _,v in pairs(game.workspace:GetChildren()) do
+                if string.find(v.Name,"Fruit") then
+                    if v:IsA("Tool") then
+                        v.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                    end
+                end
+            end
+        end)
+    end)
+
+    Page1_2:Button("FlyGui",function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Reiji0001/Fly-Gui/main/Fly-Gui_Source"))()
+    end)
+
+    Page1_2:Button("Super Low Mode",function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/crystalnerd/ScriptLinhTinh/main/AntiLag"))()
+    end)
+
+    local Page2_2 = Tab2:CreatePage(2,"Player")
+
+    Page2_2:Label('Stats')
+
+    Page2_2:Toggle("Auto Stat (Hp)",false,function(value)
+        hp = value
+    end)
+
+    Page2_2:Toggle("Auto Stat (Melee)",false,function(value)
+        Melee = value
+    end)
+
+    Page2_2:Toggle("Auto Stat (Sword)",false,function(value)
+        sw = value
+    end)
+
+    Page2_2:Toggle("Auto Stat (DF)",false,function(value)
+        df = value
+    end)
+
+    local Page1_3 = Tab3:CreatePage(1,"TeleIsland")
+
+    Page1_3:Dropdown("Island",{"Start Island","Sand Island","Roshi Island","Snow Island","Pink Island","NameK Island","IDK Island","DontKnowThisIsland","Sky Island","Magma Island","Sky2 Island","Secret House","KameKameha Island"},nil,function(a)
+        if a == "Start Island" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(763.180908, 198.715561, 313.915527, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+        elseif a == "Sand Island" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1400.95068, 107.864403, -366.769592, 0.173624337, 0, 0.984811902, 0, 1, 0, -0.984811902, 0, 0.173624337)
+        elseif a == "Roshi Island" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-700.902893, 100.1214142, -1429.79468, 0.499959469, 0, 0.866048813, 0, 1, 0, -0.866048813, 0, 0.499959469)
+        elseif a == "Snow Island" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(400.063232, 104.515747, -2343.72412, 0.152966559, 0, 0.988231361, 0, 1, 0, -0.988231361, 0, 0.152966559)
+        elseif a == "Pink Island" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2700.44238, 99.3593597, -2515.00439, 0.344021738, -0, -0.938961744, 0, 1, -0, 0.938961744, 0, 0.344021738)
+        elseif a == "NameK Island" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-492.455078, 87.4435577, 2207.8479, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+        elseif a == "IDK Island" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(702.585754, 200.011795, 4200.17188, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+        elseif a =="DontKnowThisIsland" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3599.39429, 70.961422, -1500.0415, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+        elseif a =="Sky Island" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2313.02148, 1100.74725, -2486.85059, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+        elseif a =="Magma Island" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1223.66321, 100.9973755, -3480.50439, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+        elseif a =="Sky2 Island" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9930.25977, 9992.77637, -9.17041016, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+        elseif a =="Secret House" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9900.36719, 10126.2021, 209.791992, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+        elseif a =="KameKameha Island" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2313.02148, 1100.74725, -2486.85059, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+        end
+    end)
+else
+    Page1:Toggle("Killaura All",false,function(value)
+        Killaura = value
+    end)
+
+    Page1:Toggle("Auto Equip Melee",Settings.AutoMelee,function(value)
+        Settings.AutoMelee = value
+    end)
+
+    Page1:Toggle("Auto Equip Sword",Settings.AutoSword,function(value)
+        Settings.AutoSword = value
+    end)
+
+    Page1:Toggle("Auto Farm Raid",Settings.FarmrDUMA,function(value)
+        Settings.FarmrDUMA = value
+    end)
+
+    Page1:Toggle("Fast Attack (50% Safe)",false,function(value)
+        CBLRaid =  value
+    end)
+
+    local Page2 = Tab1:CreatePage(2,"SHIT")
+
+    Page2:Label('Config')
+
+    Page2:Dropdown("Wish",{"Random","Beli","Gem","Unlock","Ruby","Dragon Scale"},Settings.Reward,function(a)
+        Settings.Reward = a
+    end)
+
+    Page2:Dropdown("Method Raid",{"Normal","Fast"},"Fast",function(a)
+        Method = a
+    end)
+
+    Settings.SaveAt = 30
+    Page2:Slider("Safe At",true,0,100,Settings.SaveAt,function(v)
+        Settings.SaveAt = v
+    end)
+
+    Settings.DistanceMob = 9
+    Page2:Slider("Distance Farm",true,0,100,Settings.DistanceMob,function(v)
+        Settings.DistanceMob = value
+    end)
+
+    Page2:Dropdown("Item",Weaponlist,Settings.Weapon,function(v)
+        Settings.Weapon = v
+    end)
+
+
+    local Page1_2 = Tab2:CreatePage(1,"Player")
+
+    Page1_2:Label('Mics')
+
+    Page1_2:Button("FlyGui",function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Reiji0001/Fly-Gui/main/Fly-Gui_Source"))()
+    end)
+
+    Page1_2:Button("Super Low Mode",function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/crystalnerd/ScriptLinhTinh/main/AntiLag"))()
+    end)
+
+end
+
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if Settings.FarmrDUMA then
+                if game.Players.LocalPlayer.Character.Humanoid.Health > game.Players.LocalPlayer.Character.Humanoid.MaxHealth / 100 * Settings.SaveAt then 
+                    Farmr = true
+                    AutoSaveModeDungeon = false
+                else
+                    Farmr = false
+                    AutoSaveModeDungeon = true
+                end
+            else
+                Farmr = false
+                AutoSaveModeDungeon = false
+            end
+        end)
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if Settings.FarmrDUMA and AutoSaveModeDungeon then
+            pcall(function()
+                if game.PlaceId == 13373351184 then
+                    if game.Players.LocalPlayer.Character.Humanoid.Health <= game.Players.LocalPlayer.Character.Humanoid.MaxHealth / 100 * Settings.SaveAt then                                                     
+                        repeat task.wait()
+                            TP(CFrame.new(606.5416259765625, 254.0508575439453, 126.32906341552734))
+                            Fast = false
+                            UnEquipWeapon()
+                        until game.Players.LocalPlayer.Character.Humanoid.Health == game.Players.LocalPlayer.Character.Humanoid.MaxHealth or not AutoSaveModeDungeon or not Settings.FarmrDUMA
+                    end
+                end
+            end)
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if Farmr then
+            if game.PlaceId == 10464237910 then 
+                Teleport(CFrame.new(game:GetService("Workspace")["5 Player"].Gate.Gate.Position))
+            elseif game.PlaceId == 13373351184 then
+                pcall(function()
+                    if game:GetService("Workspace"):FindFirstChild("Zeno") then
+                        UnEquipWeapon()
+                        if plr.PlayerGui:FindFirstChild("WishGui") then 
+                            if Settings.Reward == "Random" then 
+                                dimemayy = math.random(1,5)
+                                if dimemayy == 1 then 
+                                    Settings.Reward = "Beli" 
+                                elseif dimemayy == 2 then 
+                                    Settings.Reward = "Gem" 
+                                elseif dimemayy == 3 then 
+                                    Settings.Reward = "Unlock" 
+                                elseif dimemayy == 4 then 
+                                    Settings.Reward = "Ruby" 
+                                elseif dimemayy == 5 then 
+                                    Settings.Reward = "Dragon" 
+                                end
+                            end
+                            if Settings.Reward == "Beli" then 
+                                ClickButton(plr.PlayerGui.WishGui.Frame.Wish1)
+                            elseif Settings.Reward == "Gem" then
+                                ClickButton(plr.PlayerGui.WishGui.Frame.Wish2)
+                            elseif Settings.Reward == "Unlock" then
+                                ClickButton(plr.PlayerGui.WishGui.Frame.Wish3)
+                            elseif Settings.Reward == "Ruby" then
+                                ClickButton(plr.PlayerGui.WishGui.Frame.Wish4)
+                            elseif Settings.Reward == "Dragon Scale" then
+                                ClickButton(plr.PlayerGui.WishGui.Frame.Wish5)
+                            end
+                        else
+                            local ZenoClick = GetZenoClick(game:GetService("Workspace").Zeno)
+                            if ZenoClick then 
+                                Teleport(CFrame.new(ZenoClick.Position))
+                                wait(1)
+                                fireproximityprompt(ZenoClick.ProximityPrompt,1)
+                                wait(1)
+                            end
+                        end		
+                    end
+
+                    local x = game:GetService("Workspace").SpawnEnemy
+                    if x:FindFirstChild("Wave5") then
+                        Killaura = false
+                        CC = true
+                        for i,x in pairs(game:GetService("Workspace").SpawnEnemy:GetDescendants()) do
+                            if x.Name == "LastBoss" then
+                                if CheckMob(x) then
+                                    repeat game:GetService("RunService").Heartbeat:wait()
+                                        if Settings.Weapon ~= nil then
+                                            if not Settings.AutoMelee and not Settings.AutoSword then
+                                                EquipWeapon(Settings.Weapon)
+                                            end
+                                        end
+                                        if Method == "Fast" then
+                                            Fast = true 
+                                        else
+                                            Click()  
+                                        end
+                                        Teleport(QuayNgang(x.HumanoidRootPart.CFrame+Vector3.new(0,Settings.DistanceMob,0)))
+                                        if CheckMob(x) then
+                                            x.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping, false)
+                                            x.HumanoidRootPart.CanCollide = false
+                                        end
+                                    until x:FindFirstChild("Humanoid").Health <= 0 or not Farmr or not x.Parent
+                                end
+                            end
+                        end
+                    else
+                        Fast = false
+                        CC = false
+                        Killaura = true
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-68.81217956542969, 138.3164520263672, 40.44826889038086)
+                    end
+                end)
+            end
+        else
+            CC = false
+            Fast = false 
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if Farm then
+            pcall(function()
+                local CurrentFarmData = CheckLevel()
+                Teleport(CFrame.new(CurrentFarmData.Quest.ClickPart.Position))
+                if plr.Quest.Num.Value == 0 then
+                    if not plr.PlayerGui:FindFirstChild("QuestTake") then 
+                        fireclickdetector(CurrentFarmData.Quest.ClickPart.ClickDetector,1)
+                        wait(1)
+                    end
+                    if plr.PlayerGui:FindFirstChild("QuestTake") then 
+                        ClickButton(plr.PlayerGui.QuestTake.Accept)
+                        wait(1)
+                    end
+                    Fast = false
+                elseif plr.Quest.Num.Value == CurrentFarmData.Num and plr.Quest.Num.Value ~= 0 then
+                    local hasmob = false
+                    for i,x in pairs(game:GetService("Workspace").Npc:GetChildren()) do
+                        if CheckMobLevel(x,CurrentFarmData.Num) and CheckMob(x) then 
+                            repeat game:GetService("RunService").Heartbeat:wait()
+                                hasmob = true
+                                if Settings.Weapon ~= nil then
+                                    EquipWeapon(Settings.Weapon)
+                                else
+                                end
+                                Click() 
+                                Teleport(QuayNgang(x.HumanoidRootPart.CFrame+Vector3.new(0,Settings.DistanceMob,0)))
+                            until not CheckMob(x) or not Farm
+                        end
+                    end
+                    if not hasmob then 
+                        Teleport(CFrame.new(CurrentFarmData.Quest.ClickPart.Position))
+                    end
+                elseif plr.Quest.Num.Value ~= CurrentFarmData.Num and plr.Quest.Num.Value ~= 0 then
+                    for k,v in pairs(plr.PlayerGui:GetChildren()) do 
+                        if v.Name == "QuestBar" then 
+                            if v:FindFirstChild("Background") and v.Background:FindFirstChild("Cancle") then 
+                                ClickButton(v.Background.Cancle)
+                                wait(1)
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
+
+spawn(function()
+    while wait(0.01) do
+    if Settings.AutoMelee then
+        for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+            if v:IsA("Tool") then 
+                if v.Name == "DragonBreath"or v.Name == "ElectricDS"or v.Name == "WaterCombat"or v.Name == "Combat"or v.Name == "BrolyCombat"or v.Name == "BlackLeg" then
+                    EquipWeapon(v.Name)
+                end
+            end
+        end
+    end
+end
+end)
+
+spawn(function()
+    while wait(0.01) do
+    if Settings.AutoSword then
+        for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+            if v:IsA("Tool") then 
+                if v.Name == "DarkBlade" or v.Name == "DarkBladeV2" or v.Name == "DarkSword" or v.Name == "DarkSwordDS" or v.Name == "DiamonSword" or v.Name == "FloSword" or v.Name == "FlameSwordDS" or v.Name == "DarkBladeAwake" then
+                    EquipWeapon(v.Name)
+                end
+            end
+        end
+    end
+end
+end)
+
+spawn(function()
+    while wait(0.15) do
+        if CBLRaid or Fast then
+            pcall(function()
+                local args = {
+                    [1] = math.random(1,2),
+                    [2] = game:GetService("Players").LocalPlayer
+                }
+                if game:GetService("Players").LocalPlayer.Character[Vtool]:FindFirstChild("HackerSo1TheGioi") then
+                    game:GetService("Players").LocalPlayer.Character[Vtool]["HackerSo1TheGioi"].RemoteEvent:FireServer(unpack(args))
+                elseif game:GetService("Players").LocalPlayer.Character[Vtool]:FindFirstChild("HackerDepTreai") then
+                    game:GetService("Players").LocalPlayer.Character[Vtool]["HackerDepTreai"].RemoteEvent:FireServer(unpack(args))
+                end
+            end) 
+        end
+    end
+end)
+
+spawn(function()
+    while wait(0.15) do
+        if CC then
+            pcall(function()
+                spawn(function()
+                    game:GetService("RunService").Heartbeat:Connect(function()
+                        if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid") then
+                            setfflag("HumanoidParallelRemoveNoPhysics", "False")
+                            setfflag("HumanoidParallelRemoveNoPhysicsNoSimulate2", "False")
+                            game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(11)
+                        end
+                    end)
+                end)
+            end)
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if Killaura then
+            if game.workspace:FindFirstChild("Npc") then
+                check = game.Workspace.Npc
+            elseif game.workspace:FindFirstChild("SpawnEnemy") then
+                check = game.Workspace.SpawnEnemy
+            end
+            wait()
+            for i,v in pairs(check:GetDescendants()) do
+                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 and (v.HumanoidRootPart.Position-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 400 then
+                    if v.Name ~= "LastBoss" then
+                        pcall(function()
+                            repeat wait()
+                                sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                                v.Humanoid.Health = 0
+                                v.HumanoidRootPart.CanCollide = false
+                                v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                v.HumanoidRootPart.Transparency = 0.8
+                            until not Killaura or not v.Parent or v.Humanoid.Health <= 1
+                        end)
+                    end
+                end
+            end
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if hp then
+            pcall(function()
+                local args = {
+                    [1] = "MaxHealth"
+                }
+
+                game:GetService("ReplicatedStorage"):WaitForChild("StatSystem"):WaitForChild("Points"):FireServer(unpack(args))
+            end)
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if Melee then
+            pcall(function()
+                local args = {
+                    [1] = "Melee"
+                }
+
+                game:GetService("ReplicatedStorage"):WaitForChild("StatSystem"):WaitForChild("Points"):FireServer(unpack(args))
+            end)
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if sw then
+            pcall(function()
+                local args = {
+                    [1] = "Sword"
+                }
+
+                game:GetService("ReplicatedStorage"):WaitForChild("StatSystem"):WaitForChild("Points"):FireServer(unpack(args))
+            end)
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if df then
+            pcall(function()
+                local args = {
+                    [1] = "DevilFruit"
+                }
+
+                game:GetService("ReplicatedStorage"):WaitForChild("StatSystem"):WaitForChild("Points"):FireServer(unpack(args))
+            end)
+        end
+    end
+end)
+
+
+game.Players.LocalPlayer.Character.ChildAdded:Connect(function(tools)
+    if tools:IsA("Tool") then
+        if tools:FindFirstChild("HackerSo1TheGioi") or tools:FindFirstChild("HackerDepTreai") then 
+            Vtool = tools.Name
+        end
+    end
+end)    
